@@ -1,0 +1,25 @@
+<div style="padding:20px;margin:20px;">
+    <h1 class="text-center">Employee list</h1>
+    <hr>
+    <table class="table table-striped">
+        <tr>
+            <th>Id</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Email</th>
+            <th>Salary</th>
+            <th>Actions</th>
+        </tr>
+        <tr *ngFor="let emp of employees, let i = 'index+1'">
+            <td>{{i}}</td>
+            <td>{{emp.firstname}}</td>
+            <td>{{emp.lastname}}</td>
+            <td>{{emp.email}}</td>
+            <td>{{emp.salary}}</td>
+            <td>
+                <button (click)="updateEmployee(emp.id)" class="btn btn-info">Update</button>
+                <button (click)="deleteEmployee(emp.id)" class="btn btn-danger" style="position:relative;left:10px">Delete</button>
+            </td>
+        </tr>
+    </table>
+</div>
