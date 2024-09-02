@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: angular-deployment
+  labels:
+    type: frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      type: frontend
+  template:
+    metadata:
+      name: angular-pod
+      labels:
+        type: frontend
+    spec:
+      containers:
+      - name: angular-container
+        image: shreyasphuke/angular-image:v1
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: angular-service
+spec:
+  type: NodePort
+  ports:
+  - targetPort: 4200
+    port: 4200
+    nodePort: 30001
+  selector:
+    type: frontend
