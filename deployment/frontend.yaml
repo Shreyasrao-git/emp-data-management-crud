@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: angular-container
-        image: shreyasphuke/angular-image:v1
+        image: shreyasphuke/angular-image:v11
 
 ---
 apiVersion: v1
