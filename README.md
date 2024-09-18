@@ -10,7 +10,8 @@ shreyasphuke/angular-image:v4 —> http://springboot-service:8080/employee (with
 shreyasphuke/angular-image:v5 —> http://ipaddress:30002/employee (with nginx server in the dockerfile)
 
 
-shreyasphuke/springboot-image:v2   —> localhost shreyasphuke/mysql:v2                       —> localhost
+shreyasphuke/springboot-image:v2   —> localhost 
+shreyasphuke/mysql:v2               —> localhost
 shreyasphuke/angular-image:v9       —> localhost
 
 
@@ -18,7 +19,7 @@ shreyasphuke/angular-image:v10 -> /api/employee
 shreyasphuke/springboot-image:v3 -> /api/emplyee
 
 shreyasphuke/angular-image:v11 -> /api/employee (changed package.json and create proxy.conf.json in emp angularapp)
-proxy.conf.json
+**proxy.conf.json**
 
 {
   "/api": {
@@ -30,6 +31,6 @@ proxy.conf.json
 }
 
 
-package.json
+**package.json**
 
 "start": "ng serve --host 0.0.0.0 --disable-host-check --proxy-config proxy.conf.json",
