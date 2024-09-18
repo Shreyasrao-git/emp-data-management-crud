@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: springboot-container
-        image: shreyasphuke/springboot-image:v1
+        image: shreyasphuke/springboot-image:v3
 
 ---
 apiVersion: v1
