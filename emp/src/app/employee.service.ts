@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class EmployeeService {
-  baseurl = "http://springboot-service:8080/employee"
+  baseurl = "/api/employee"
   constructor(private httpClient: HttpClient) {
     
   }
