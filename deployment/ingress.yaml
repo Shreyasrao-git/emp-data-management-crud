@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: my-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: "6a424a1c-e991-4d78-ae0e-757103c6e3c7-10-244-7-40-30001.papa.r.killercoda.com"
+    http:
+      paths:
+      - path: /api/employee(/|$)(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: springboot-service
+            port:
+              number: 8080
+      - path: /(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: angular-service
+            port:
+              number: 4200
